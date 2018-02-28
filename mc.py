@@ -8,7 +8,7 @@ import sys
 host="ninvfeng.com" #服务器
 port=22 #端口
 user="root" #用户名
-key ="/Users/feng/.ssh/id_rsa" #可登陆服务器的私钥文件
+key ="C:/Users/feng/.ssh/id_rsa" #可登陆服务器的私钥文件
 path="/data/game/mc1.11.2" #我的世界游戏目录
 file="minecraft_server.1.11.2.jar" #我的世界服务端主程序文件
 
@@ -25,5 +25,5 @@ if (len(sys.argv)>1 and sys.argv[1]=='start'):
 elif (len(sys.argv)>1 and sys.argv[1]=='stop'):
     stdin, stdout, stderr = ssh.exec_command("kill `ps -ef | grep '"+file+"' | grep -v grep | awk '{print $2}'`")
 else:
-    print "start:启动  stop:关闭"
+    print("start:启动  stop:关闭")
 ssh.close()
